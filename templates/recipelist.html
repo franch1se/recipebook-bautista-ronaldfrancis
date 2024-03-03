@@ -4,6 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color:#101415;
+        }
+        a {
+            text-decoration: none;
+            color: beige;
+        }
+        a:hover{
+            background-color: beige;
+            color: #101415;
+            border-radius: 10pt;
+            padding: 2pt;
+        }
+        h1 {
+            color: beige;
+            text-align: center;
+            font-size: 50pt;
+            font-family: 'playfair display';
+            font-weight: 600;
+            font-style: italic;
+        }
+        h2 {
+            color: beige;
+            font-size: 34pt;
+            padding: 4pt;
+        }
+        h3 {
+            color: beige;
+            font-size: 25pt;
+        }
+        li {
+            font-family: 'times new roman';
+            font-size: 18pt;
+            color: beige;
+        }
+        .italic {
+            font-size: 15pt;
+            font-style: italic;
+        }
+    </style>
     <title>{{name}} Ingredients</title>
     <h1><a href = '/ledger/recipes/list'>Recipe Book</a></h1>
 </head>
@@ -11,7 +56,7 @@
     <h2>{{name}}</h2>
     <h3>Ingredients</h3>
     {% for ingredient in ingredients %}
-        <li>{{ingredient.ingredient.name}}, {{ingredient.quantity}}</li>
+        <li>{{ingredient.ingredient.name}}, <span class="italic">{{ingredient.quantity}}</span></li>
     {% endfor %}
 </body>
 </html>
