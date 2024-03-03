@@ -9,7 +9,7 @@
 </head>
 <body>
     {% for recipe in recipes %}
-        <li><a href = "/ledger{{recipe.link}}"> {{recipe.name}} </a></li>
+        <li><a href = '/ledger/recipe/{{recipe.id}}/ingredients'>{{recipe.name}}</a></li>
     {% endfor %}
 </body>
 </html>
