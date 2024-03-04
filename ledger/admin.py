@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import *
+from .models import Recipe, RecipeIngredient
 
 # Register your models here.
 
@@ -10,35 +10,10 @@ class RecipeIngredientInline (admin.TabularInline):
 class RecipeAdmin (admin.ModelAdmin):
     model = Recipe
 
-    search_fields = ('name', 'id')
-    list_display = ('name', 'id', )
-
-    inlines = [RecipeIngredientInline, ]
-
-class IngredientAdmin (admin.ModelAdmin):
-    model = Ingredient
-
     search_fields = ('name', )
-    list_display = ('name', )
+    list_display = ('name', 'id', )
+    list_filter = ('name', )
 
     inlines = [RecipeIngredientInline, ]
 
-
-class RecipeIngredientAdmin (admin.ModelAdmin):
-    model = RecipeIngredient
-
-    search_fields = ('recipe', 'ingredient' , 'quantity')
-    list_display = ('ingredient' , 'quantity', 'recipe')
-    list_filter = ('recipe', 'ingredient')
-
-    fieldsets = [
-        ('Details', {
-            'fields': [
-            'recipe', 'ingredient', 'quantity', 
-            ]
-            }),
-    ]
-
-admin.site.register(RecipeIngredient, RecipeIngredientAdmin)
 admin.site.register(Recipe, RecipeAdmin)
-admin.site.register(Ingredient, IngredientAdmin)
