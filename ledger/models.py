@@ -10,7 +10,7 @@ class Recipe (models.Model):
     def __str__(self):
         return self.name
     def get_absolute_url (self):
-        return reverse ('recipes', args=str[self.name()])
+        return reverse ('recipes', args=str[self.name])
 
 class Ingredient (models.Model):
     name = models.CharField(max_length=100)
@@ -18,7 +18,7 @@ class Ingredient (models.Model):
     def __str__(self):
         return self.name
     def get_absolute_url (self):
-        return reverse ('ingredient', args=str[self.name()])
+        return reverse ('ingredient', args=str[self.name])
     
 class RecipeIngredient (models.Model):
     quantity = models.CharField(max_length=100)
