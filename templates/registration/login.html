@@ -1,0 +1,74 @@
+<html>
+    <title>Recipe Book Login</title>
+    <body>
+        <style>
+            body {
+                background-color: #101415;
+            }
+            h1 {
+                font-family: 'times new roman';
+                font-style: bold; 
+                font-style: italic;
+                font-size: 50pt;
+                color: beige;
+                text-align: center;
+            }
+            .login {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                height: auto;
+                font-family: 'times new roman';
+                font-size: 15pt;
+                color: beige
+            }
+            .center {
+                display: flex;
+                justify-content: center;
+            }
+            .buttons {
+                border: 1pt solid beige;
+                border-radius: 4px;
+                color: beige;
+                background-color: #101415;
+                font-family: 'times new roman';
+                font-size: 15pt;
+            }
+            .buttons:hover{
+                border-radius: 4px;
+                color: #101415;
+                background-color: beige;
+                font-family: 'times new roman';
+            }
+            h2 {
+                color: beige;
+                font-family: 'times new roman';
+                font-size: 25pt;
+                text-align: center;
+            }
+            h3 {
+                text-align: center;
+                font-size: 10pt;
+            }
+            a {
+                color: beige;
+                text-decoration: none;
+            }
+            a:hover{
+                text-decoration: underline;
+            }
+        </style>
+        <h1>Recipe Book</h1>
+        <h2>Login</h2>
+        <div class="login">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <h3><a href="{% url 'password_reset' %}">Password Reset</a></h3>
+                <div class="center">
+                    <button type="submit" class="buttons">Login</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

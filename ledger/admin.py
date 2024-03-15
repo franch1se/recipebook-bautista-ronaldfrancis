@@ -11,7 +11,7 @@ class RecipeAdmin (admin.ModelAdmin):
     model = Recipe
 
     search_fields = ('name', )
-    list_display = ('name', 'id', )
+    list_display = ('name', 'id', 'created_on', 'updated_on', )
     list_filter = ('name', )
 
     inlines = [RecipeIngredientInline, ]
